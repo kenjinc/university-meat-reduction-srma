@@ -87,7 +87,6 @@ ggplot(sr.dataset,aes(x=approach,y=num.study,fill=effect.dir)) +
   labs(caption="Choice Architecture: 40.0%, Conscious Processing: 56.3%, Multimodal: 100.0%\n\nRelative to the other approaches, multimodal interventions were more likely to significantly reduce the consumption \nof meat within university settings (p=0.029). No study reported any salient increases in meat consumption resulting \nfrom the implementation of their interventions.") + 
   ggtitle("Figure 4. Grouped bar graph comparing the proportion of interventions \nassociated with significant reductions in meat consumption across each \ninvestigated approach.") +
   theme(plot.caption=element_text(hjust=0),legend.position="bottom",panel.border=element_rect(fill=NA),panel.background=element_blank())
-  
 ```
 
 ## Illustrating effect size heterogeneity
