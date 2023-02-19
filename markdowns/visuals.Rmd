@@ -48,10 +48,10 @@ ggplot(times.series,aes(x=year,y=cumul.freq,fill=fill)) +
   scale_x_continuous(breaks=c(2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019,2020,2021)) +
   xlab(" ") +
   ylab("Cumulative Frequency") +
-  labs(caption="Exponential Fit, 2001-2021 (Conducted): 0.965; Exponential Fit, 2005-2021 (Published): 0.957") + 
+  labs(caption="Exponential Fit, 2001-2021 (Conducted): 0.965; Exponential Fit, 2005-2021 (Published): 0.957.") + 
   scale_y_continuous(breaks=c(1,11,21,31)) +
   ggtitle("Figure 2. Grouped bar graph plotting the annual increases in the number of \nmeat reduction interventions implemented within university settings between \n2000 and 2021.") +
-  theme(plot.caption=element_text(hjust=0),axis.text.x=element_text(angle=30,hjust=1,vjust=1),panel.background=element_blank(),legend.position="bottom",panel.border=element_rect(fill=NA))
+  theme(axis.text.x=element_text(angle=30,hjust=1,vjust=1),panel.background=element_blank(),legend.position="bottom",panel.border=element_rect(fill=NA))
 ```
 
 ## Looking at geospatial variation across studies
@@ -68,10 +68,10 @@ ggplot(intervention_map,aes(x=long,y=lat,group=group,fill=region)) +
   xlab(" ") + 
   ylab(" ") +
   guides(fill="none") +
-  labs(caption="USA (n=15), UK (n=7), Sweden (n=3), Italy (n=3), Spain (n=1), Norway (n=1), Canada (n=1)") + 
+  labs(caption="USA (n=15), UK (n=7), Sweden (n=3), Italy (n=3), Spain (n=1), Norway (n=1), Canada (n=1).") + 
   coord_cartesian(xlim=c(-162,29),ylim=c(22,76)) +
   ggtitle("Figure 3. Choropleth map illustrating the countries where, and the frequency with \nwhich, included interventions were conducted between 2000 and 2021.") +
-  theme(plot.caption=element_text(hjust=0),axis.ticks=element_blank(),axis.text=element_blank(),panel.border=element_rect(fill=NA),legend.position="bottom",panel.grid=element_blank(),panel.background=element_rect(fill="aliceblue"))
+  theme(axis.ticks=element_blank(),axis.text=element_blank(),panel.border=element_rect(fill=NA),legend.position="bottom",panel.grid=element_blank(),panel.background=element_rect(fill="aliceblue"))
 ```
 
 ## Comparing success rates across the three identified approaches
@@ -84,9 +84,9 @@ ggplot(sr.dataset,aes(x=approach,y=num.study,fill=effect.dir)) +
   scale_y_continuous(labels=scales::percent_format(.1L),breaks=c(1,.6,.437,0)) +
   xlab(" ") + 
   ylab("Rate of Success") +
-  labs(caption="Choice Architecture: 40.0%, Conscious Processing: 56.3%, Multimodal: 100.0%\n\nRelative to the other approaches, multimodal interventions were more likely to significantly reduce the consumption \nof meat within university settings (p=0.029). No study reported any salient increases in meat consumption resulting \nfrom the implementation of their interventions.") + 
+  labs(caption="Choice Architecture: 40.0%, Conscious Processing: 56.3%, Multimodal: 100.0%.\n\nRelative to the other approaches, multimodal interventions were more likely to significantly reduce the consumption \nof meat within university settings (p=0.029). No study reported any salient increases in meat consumption resulting \nfrom the implementation of their interventions.") + 
   ggtitle("Figure 4. Grouped bar graph comparing the proportion of interventions \nassociated with significant reductions in meat consumption across each \ninvestigated approach.") +
-  theme(plot.caption=element_text(hjust=0),legend.position="bottom",panel.border=element_rect(fill=NA),panel.background=element_blank())
+  theme(legend.position="bottom",panel.border=element_rect(fill=NA),panel.background=element_blank())
 ```
 
 ## Illustrating effect size heterogeneity
@@ -105,7 +105,7 @@ ggplot(sr.dataset,aes(x=effect.mag,y=outcome.var,fill=outcome.var)) +
   labs(caption="The effect estimates of interventions evaluating observed changes in meat consumption were the smallest and most evenly \ndistributed across the three methods of evaluation.") + 
   ggtitle("Figure 5. Violin plot demonstrating the effect size hetereogeneity across the three \nidentified methods of evaluation.") +
   geom_vline(xintercept=1,color="black",size=.3,linetype=2) +
-  theme(plot.caption=element_text(hjust=0),legend.position="bottom",panel.border=element_rect(fill=NA),panel.background=element_blank(),axis.ticks.y=element_blank(),axis.text.y=element_blank(),panel.grid.minor=element_blank())
+  theme(legend.position="bottom",panel.border=element_rect(fill=NA),panel.background=element_blank(),axis.ticks.y=element_blank(),axis.text.y=element_blank(),panel.grid.minor=element_blank())
 ```
 
 
@@ -134,12 +134,12 @@ ggplot(fixed.effect,aes(x=effect.mag,y=study.title,fill=approach)) +
   geom_point(alpha=.8,size=6,shape=21) + 
   xlab("Estimated Effect Size") + 
   ylab(" ") + 
-  scale_x_continuous(breaks=c(0,2,4,6,8),limits=c(0,8)) +
+  scale_x_continuous(breaks=c(1,3,5,7),limits=c(.6,8)) +
   labs(color=" ") +
   scale_fill_manual(guide=guide_legend(title=NULL),breaks=c("Multimodal","Choice Architecture","Conscious Processing"),values=c("thistle3","lightsteelblue3","lightcoral"),labels=c("Multimodal (n=8)","Choice Architecture (n=5)","Conscious Processing (n=4)")) +
   scale_y_discrete(limits=c("Garnett et al. (2020a)","Garnett et al. (2021)","Brunner et al. (2018)","Schwitzgebel, Cokelet, & Singer (2020)","Malan (2020)","Larner et al. (2021)","Kurz (2018)","Garnett et al. (2019)","Jalil, Tasoff, & Bustamante (2020)","Turnwald & Crum (2019)","Cerezo-Prieto & Frutos-Esteban (2021)","Piester et al. (2020a)","Piester et al. (2020b)","Slapø & Karevold (2019)","Andersson & Nelander (2021)","Michels et al. (2008)","Garnett et al. (2020b)")) + 
-  labs(caption="Effect sizes are given as odds ratios, with error bars denoting 95% confidence \nintervals.") + 
-  ggtitle("Figure 6. Forest plot comparing effect estimates across \nthe 17 studies included in the fixed effect model.") +
+  labs(caption="Effect sizes are given as odds ratios, with error bars denoting 95% confidence intervals.") + 
+  ggtitle("Figure 6. Forest plot comparing the effect estimates of the 17 studies included in the fixed effect model.") +
   geom_vline(xintercept=1,color="black",size=.3,linetype=2) +
   theme(plot.caption=element_text(hjust=0),legend.position="bottom",panel.background=element_blank(),panel.border=element_rect(fill=NA),panel.grid.minor=element_blank())
 ```
