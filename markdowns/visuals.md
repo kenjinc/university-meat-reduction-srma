@@ -92,6 +92,9 @@ ggplot(intervention_map,aes(x=long,y=lat,group=group,fill=region)) +
   theme(axis.ticks=element_blank(),axis.text=element_blank(),panel.border=element_rect(fill=NA),legend.position="bottom",panel.grid=element_blank(),panel.background=element_rect(fill="aliceblue"))
 ```
 
+    ## Warning: Using `size` aesthetic for lines was deprecated in ggplot2 3.4.0.
+    ## ℹ Please use `linewidth` instead.
+
 ![](visuals_files/figure-gfm/unnamed-chunk-6-1.png)<!-- -->
 
 ## Comparing success rates across the three identified approaches
